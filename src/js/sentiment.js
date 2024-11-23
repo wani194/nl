@@ -6,6 +6,8 @@ dotenv.config();
 const  getSentimentAnalysis = async(text) => {
     const apiKey = process.env.API_KEY;
     const url = 'https://api.meaningcloud.com/sentiment-2.1';
+   
+   
     try {
         const response = await axios.post(url, null, {
             params: {

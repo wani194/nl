@@ -12,7 +12,7 @@
         <h1>News Article Evaluator</h1>
     </header>
     <main>
-        <form id="ArticleForm">
+        <form id="ArticleForm" onsubmit="handleFormSubmit(event)">
             <input type="text" id="ArticleUrl" placeholder=" Enter Article URL" required />
             <button type="submit">Evaluate</button>
         </form>
