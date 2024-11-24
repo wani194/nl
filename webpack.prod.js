@@ -1,25 +1,25 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extraact-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
-Module.exports = {
-    mode: 'production',
-    entry: './src/js/index.js',
+
+module.exports = {
+    mode: 'production', //set production mode 
+    entry: './src/js/index.js',//entry file 
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        filename: 'bundle.js',//output bundle
+        path: path.resolve(__dirname, 'dist'),//output directory
+        
     },
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.scss$/,//scss files
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.js$/,
+                test: /\.js$/,//javascript files
                 exclude: /node-modules/,
                 use: ['babel-loader'],
             },
@@ -27,10 +27,9 @@ Module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/html/index.html',
-            filename: 'index.html',
+            template: './src/html/index.html',//html template
+            filename: 'index.html',//output html file
         }),
-        new MiniCssExtractPlugin(),
-        new WorkboxPlugin.GenerateSW(),
+        new MiniCssExtractPlugin(),//ectract css
     ],
 };

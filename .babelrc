@@ -1,3 +1,4 @@
 {
     "presets" : ["@babel/preset-env"]
 }
+//uses bable preset to convert modern javascript to copatible code for diffrent evironments

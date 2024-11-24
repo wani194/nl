@@ -1,17 +1,14 @@
-# project :News Article Evaluator
-this project help evaluat and analyze news articals providing insights into their content an quality
-
+# NLP Project
+this is a web tool for analyzing  articles using the aylien API .It helps classify content as subjective or objective and checks if the tone is positive , neutral or negative.
 ## features 
-- analyze the tone and style of artical 
-- works offline for seamless user experience
-- customizable for diffrent use cases
+- analyze articles and blogs 
+- classify content as subjective or objective 
+- detect tone (positive, neutral, negative)
+- simple user interface
 
-## how to run 
-1. install dependencies:
-- npm install
-
-2. start the development server :
-- npm run dev
-
-3. bild for prodiction:
-- npm run build
+## technoloies used 
+- node.js:backend server
+- express:web framework
+- aylien API :for NLP analysis
+- babel :javascript compiler 
+- sass : for styling 
