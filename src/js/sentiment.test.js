@@ -1,9 +1,9 @@
 
 const { text } = require('body-parser');
-const { getSentimentAnalysis } = require('../sentiment');
+const { getSentimentAnalysis } = require('./sentiment');
 
 //mocking sentiment analysisfo different text input
-jest.mock('../sentiment', () =>({
+jest.mock('./sentiment', () =>({
     getSentimentAnalysis: jest.fn((text) => {
         if (text.includes('love')) return Promise.resolve({score_tag: 'p+'});
         if (text.includes('hate')) return Promise.resolve({score_tag: 'N'});
