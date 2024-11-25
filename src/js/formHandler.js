@@ -10,7 +10,7 @@ export const handleFormSubmit = async (e) => {
   }
   try {
     //make a post requast to the sentiment analysis endpoint
-    const response = await fetch('http://localhost:8081/sentiment', {
+    const response = await fetch('http://localhost:8888/sentiment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text:url }),
@@ -19,10 +19,11 @@ export const handleFormSubmit = async (e) => {
     //parse the response data and display it on the page
     const data = await response.json();
     document.getElementById('results').innerHTML = `
-    <p>polarity: ${data.score_tag}</p>
-    <p>Subjectivity : ${data.subjectivity || 'N/A'}</p>
-    <P>Text: ${data.text}</p>
-    `;
+  <p>polarity: ${data.score_tag || 'N/A'}</p>
+  <p>Subjectivity : ${data.subjectivity || 'N/A'}</p>
+  <p>Text: ${data.text || 'N/A'}</p>
+`;
+
   }
   catch (error) {
     //handle errors during the requast
@@ -32,6 +33,7 @@ export const handleFormSubmit = async (e) => {
   }
 };
 
-
+//make the function accessible globally
+window.handleFormSubmit = handleFormSubmit;
 
 

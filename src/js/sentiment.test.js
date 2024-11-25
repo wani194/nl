@@ -1,5 +1,4 @@
 
-const { text } = require('body-parser');
 const { getSentimentAnalysis } = require('./sentiment');
 
 //mocking sentiment analysisfo different text input
