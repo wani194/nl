@@ -1,0 +1,36 @@
+
+
+@use 'header' as h;
+@use 'footer' as f;
+@use 'form' as frm;
+
+// إذا كنت بحاجة لاستخدام المتغيرات أو الأنماط من ملفات أخرى:
+header {
+    background-color: h.$header-bg-color;  // استخدام المتغير من ملف header.scss
+}
+
+footer {
+    background-color: f.$footer-bg-color;  // استخدام المتغير من ملف footer.scss
+}
+
+form {
+    background-color: frm.$form-bg-color;  // استخدام المتغير من ملف form.scss
+}
+
+body {
+    background-color: h.$header-bg-color;
+}
+main
+{
+    background-color: white;
+    padding: 30px 0;
+    text-align: center;
+    #results{
+        padding: 20px;
+        background-color: pink;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+}
