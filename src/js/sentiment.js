@@ -10,11 +10,11 @@ const  getSentimentAnalysis = async(text) => {
    
     try {//make the request to the api 
         const response = await axios.post(url, null, {
-            params: {
+            
                 key: apiKey, //api Key
                 txt: text,//text for analysis
                 lang: 'en'//language
-            }
+    
         });
         return response.data;//return api response
     } catch (error) {

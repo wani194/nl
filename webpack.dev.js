@@ -9,14 +9,17 @@ module.exports = {
    devtool: 'source-map',//enable source maps
    output:
    {
-      filename: 'bundle.js',//output file name 
+      filename: 'bundle.ee266c44f129b8013280.js',//output file name 
       path: path.resolve(__dirname, 'dist'),//output directory
       clean: true,//clean output folder before each build 
    },
    devServer: {
-      static: './dist', //static files directory
-      open: true,//automaticaly open browser 
-      hot: true,//enable hot module replacement 
+      static: path.join(__dirname, './dist'), // تعديل contentBase إلى static في Webpack 5
+      compress: true, // تفعيل الضغط للملفات
+     
+      port: 8081, // المنفذ
+      open: true, // فتح المتصفح تلقائيًا عند التشغيل
+      historyApiFallback: true,
    },
    module: {
       rules: [
@@ -26,7 +29,7 @@ module.exports = {
          },
          {
             test: /\.js$/,//process javascript file 
-            exclude: /node-module/,//exclude node_modules
+            exclude: /node_modules/,//exclude node_modules
             use: ['babel-loader'],// use babel for javascript transpiling
          },
       ],
@@ -35,6 +38,10 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: './src/html/index.html',//html template file 
          filename: 'index.html',//output html file name
+         minify: {
+            removeComments: true,
+            collapseWhitespace: true,      // تصغير المحتوى في وضع الإنتاج
+         },
       }),
    ],
 };

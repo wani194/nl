@@ -3,12 +3,14 @@ const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
 const { getSentimentAnalysis } = require('./sentiment');//important the statment analysis func 
+const cors = require('cors');
+
 
 dotenv.config();//loading environment virable from env file 
 
 const app = express();//CREAT AN EXPRESS APP
 const PORT = 8888;//definig the port that the server will run in it 
-
+app.use(cors());//f 
 app.use(express.json());//setting up the app to handle json data in incoming requests
 
 app.get('/', (req, res) => {
