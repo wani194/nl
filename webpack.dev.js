@@ -1,7 +1,10 @@
-const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');  // Adding Workbox Plugin for Service Worker
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -10,16 +13,15 @@ module.exports = {
    devtool: 'source-map',//enable source maps
    output:
    {
-      filename: 'bundle.ee266c44f129b8013280.js',//output file name 
+      filename: 'bundle.js',//output file name 
       path: path.resolve(__dirname, 'dist'),//output directory
       clean: true,//clean output folder before each build 
    },
-   devServer: {
-      static: path.join(__dirname, 'dist'), // تعديل contentBase إلى static في Webpack 5
-      compress: true, // تفعيل الضغط للملفات
-     
-      port: 8081, // المنفذ
-      open: true, // فتح المتصفح تلقائيًا عند التشغيل
+  devServer: {
+      static: path.join(__dirname, 'dist'), 
+     compress: true,
+      port: 8081,
+      open: true,
       historyApiFallback: true,
    },
    resolve: {
@@ -46,6 +48,14 @@ module.exports = {
          },
       ],
    },
+   optimization: {
+      minimize: true, //  تصغير 
+      minimizer: [
+         new TerserPlugin(), // تصغير JavaScript
+         new CssMinimizerPlugin(), // تصغير CSS
+      ],
+   },
+
    plugins: [
       new HtmlWebpackPlugin({
          template: './src/html/index.html',//html template file 
@@ -57,7 +67,17 @@ module.exports = {
          },
       }),
       new webpack.DefinePlugin({
-         'process.env.API_KEY': JSON.stringify(process.env.API_KEY),  // تعريف المتغير البيئي
+         'process.env.API_KEY': JSON.stringify(process.env.API_KEY),  // Define environment variable for API key
+      }),
+
+      new WorkboxPlugin.GenerateSW({
+         clientsClaim: true, // Ensure Service Worker takes control immediately
+         skipWaiting: true,  // Skip waiting phase and activate the new SW immediately
        }),
+       
+
+      new MiniCssExtractPlugin({
+         filename: 'styles.css', // Output CSS file name
+      }),
    ],
 };

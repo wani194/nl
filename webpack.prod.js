@@ -7,26 +7,20 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');  // Adding Workbox Plugin for Service Worker
 const webpack = require('webpack'); // Import webpack to use DefinePlugin
-const { optimize } = require('webpack');
+//const { optimize } = require('webpack');
 
 module.exports = {
    mode: 'production', // Set to production mode for optimized builds
    entry: './src/js/index.js', // The entry point of the application
    devtool: 'source-map', // Enable source maps for debugging
    output: {
-      filename: 'bundle.e266c44f129b8013280.js', // Output JavaScript file name
+      filename: 'bundle.js', // Output JavaScript file name
       path: path.resolve(__dirname, 'dist'), // Output directory
       clean: true, // Clean the output directory before each build
+      publicPath: '/',//المسار
    },
    
-   devServer: {
-      static: path.join(__dirname, 'dist'), // تعديل contentBase إلى static في Webpack 5
-      compress: true, // تفعيل الضغط للملفات
-     
-      port: 8081, // المنفذ
-      open: true, // فتح المتصفح تلقائيًا عند التشغيل
-      historyApiFallback: true,
-   },
+   
 
    resolve: {
       fallback: {
@@ -83,7 +77,7 @@ module.exports = {
        
 
       new MiniCssExtractPlugin({
-         filename: 'styles.d53cb9b4818d68b931e6.css', // Output CSS file name
+         filename: 'styles.css', // Output CSS file name
       }),
    ],
 };

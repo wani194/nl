@@ -4,9 +4,7 @@
     "body-parser": "^1.20.3",
     "buffer": "^6.0.3",
     "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "process": "^0.11.10",
-    "workbox-webpack-plugin": "^7.3.0"
+    "express": "^4.21.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -22,6 +20,7 @@
     "mini-css-extract-plugin": "^2.9.2",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
     "sass": "^1.82.0",
     "sass-loader": "^16.0.4",
     "stream-browserify": "^3.0.0",
@@ -31,7 +30,8 @@
     "webpack": "^5.97.1",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "webpack-dev-server": "^5.1.0",
+    "workbox-webpack-plugin": "^7.3.0"
   },
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
