@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Article Evaluator</title>
     <link rel="stylesheet" href="styles/css/main.css">
-
-      <meta name="description" content="Evaluate the sentiment of News Article and bloges to classify them as subjective or objective.">
+    <meta name="description"
+        content="Evaluate the sentiment of News Article and bloges to classify them as subjective or objective.">
 </head>
 
 <body>
@@ -17,15 +17,18 @@
     <main>
         <form id="ArticleForm" onsubmit="handleFormSubmit(event)">
             <label for="ArticleUrl" class="Visually-hidden">Enter Article URL </label>
-            <input type="url" id="ArticleUrl" placeholder=" Enter Article URL" required aria-label="Enter Article Url" />
+            <input type="url" id="ArticleUrl" placeholder=" Enter Article URL" required
+                aria-label="Enter Article Url" />
             <button type="submit" id="evaluateButton">Evaluate</button>
         </form>
+        <section id="loading" style="display: none;">Loading...</section>
         <section id="results" aria-live="polite"></section>
+
     </main>
     <footer>
         <p>&copy; 2024. All rights reserved.</p>
     </footer>
-    
+
     <script src="js/index.js"></script>
 
 </body>

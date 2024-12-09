@@ -1,28 +1,38 @@
 # NLP Project
-this is a web tool for analyzing  articles using the aylien API .It helps classify content as subjective or objective and checks if the tone is positive , neutral or negative.
-## features 
-- analyze articles and blogs 
-- classify content as subjective or objective 
-- detect tone (positive, neutral, negative)
-- simple user interface
-
-## technoloies used 
-- node.js:backend server
-- express:web framework
-- aylien API :for NLP analysis
-- babel :javascript compiler 
-- sass : for styling 
-
-# NLP Project
-
 ## Description
-This project uses Natural Language Processing (NLP) to analyze text sentiment from news articles.
+A web tool for analyzing sentiment and subjectivity of articles and blogs using Natural Language Processing (NLP). It classifies content as subjective or objective and determines the tone (positive, neutral, negative). 
 
-## Prerequisites
-Ensure you have Node.js and npm installed.
 
-## Installation
+---
 
+## Features
+- Analyze articles for sentiment polarity (positive, neutral, or negative).
+- Classify articles as subjective or objective.
+- Display results including polarity, subjectivity, and a snippet of the analyzed text.
+- Validate URLs with user-friendly error messages.
+- Works offline with Service Worker integration.
+- Simple, responsive user interface.
+
+---
+
+## Technologies Used
+- **Node.js**: Backend runtime.
+- **Express**: Web framework for routing and server setup.
+- **MeaningCloud API**: NLP analysis of article content.
+- **Webpack**: Tool for bundling, optimizing, and managing assets.
+- **SCSS**: Modular and efficient styling approach.
+- **Jest**: JavaScript testing framework for unit tests.
+
+---
+
+## Setup and Installation
+
+### Prerequisites
+- Ensure you have the following installed:
+  - Node.js (version 14 or later).
+  - npm (Node Package Manager).
+
+### Steps to Install
 1. Clone the repository:
     ```bash
     git clone https://github.com/yourusername/nlp-project.git
@@ -33,23 +43,28 @@ Ensure you have Node.js and npm installed.
     cd nlp-project
     ```
 
-3. Install the dependencies:
+3. Install the required dependencies:
     ```bash
     npm install
     ```
 
-## Running the Development Server
+---
 
+## Usage
+
+### Running the Development Server
 1. Start the development server:
     ```bash
     npm run dev
     ```
 
-2. Open your browser and go to `http://localhost:8082`.
+2. Open your browser and navigate to:
+    ```
+    http://localhost:8081
+    ```
 
-## Running the Production Build
-
-1. Build the project:
+### Running the Production Build
+1. Build the project for production:
     ```bash
     npm run build
     ```
@@ -59,8 +74,14 @@ Ensure you have Node.js and npm installed.
     npm run start
     ```
 
-## Testing
+3. Open your browser and go to:
+    ```
+    http://localhost:8081
+    ```
 
-To run the tests:
+---
+
+## Testing
+To ensure all functionalities are working as expected, run the test cases:
 ```bash
 npm run test

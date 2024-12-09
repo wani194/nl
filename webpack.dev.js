@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -14,13 +15,24 @@ module.exports = {
       clean: true,//clean output folder before each build 
    },
    devServer: {
-      static: path.join(__dirname, './dist'), // تعديل contentBase إلى static في Webpack 5
+      static: path.join(__dirname, 'dist'), // تعديل contentBase إلى static في Webpack 5
       compress: true, // تفعيل الضغط للملفات
      
       port: 8081, // المنفذ
       open: true, // فتح المتصفح تلقائيًا عند التشغيل
       historyApiFallback: true,
    },
+   resolve: {
+      fallback: {
+         path: require.resolve('path-browserify'), // Fallback for 'path' module
+         os: require.resolve('os-browserify/browser'), // Fallback for 'os' module
+         crypto: require.resolve('crypto-browserify'), // Fallback for 'crypto' module
+         process: require.resolve('process/browser'), // Fallback for 'process' module
+         vm: require.resolve('vm-browserify'),
+    stream: require.resolve('stream-browserify'),
+
+      },
+   },  
    module: {
       rules: [
          {
@@ -38,10 +50,14 @@ module.exports = {
       new HtmlWebpackPlugin({
          template: './src/html/index.html',//html template file 
          filename: 'index.html',//output html file name
+         
          minify: {
             removeComments: true,
             collapseWhitespace: true,      // تصغير المحتوى في وضع الإنتاج
          },
       }),
+      new webpack.DefinePlugin({
+         'process.env.API_KEY': JSON.stringify(process.env.API_KEY),  // تعريف المتغير البيئي
+       }),
    ],
 };
