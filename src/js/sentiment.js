@@ -26,6 +26,3 @@ const getSentimentAnalysis = async (text) => {
 };
 //export func
 module.exports = { getSentimentAnalysis };
-
-
-
