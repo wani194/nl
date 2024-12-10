@@ -17,7 +17,7 @@ module.exports = {
       filename: 'bundle.js', // Output JavaScript file name
       path: path.resolve(__dirname, 'dist'), // Output directory
       clean: true, // Clean the output directory before each build
-      publicPath: '/',//المسار
+      publicPath: '/',//   المسار العام 
    },
    
    

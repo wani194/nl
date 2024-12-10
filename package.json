@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "^1.7.8",
+    "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "buffer": "^6.0.3",
     "cors": "^2.8.5",
@@ -45,5 +45,12 @@
       "node_modules",
       "src"
     ]
-  }
+  },
+  "name": "nlp-project",
+  "version": "1.0.0",
+  "description": "A web tool for analyzing sentiment and subjectivity of articles and blogs using Natural Language Processing (NLP). It classifies content as subjective or objective and determines the tone (positive, neutral, negative).",
+  "main": "webpack.dev.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

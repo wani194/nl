@@ -28,10 +28,10 @@ app.post('/sentiment', async (req, res) => {
     // Ensure the text is provided and is a valid string (optional validation for URL if needed)
     if (!text || typeof text !== 'string') {
         return res.status(400).json({
-          error: 'Invalid input. Please provide a valid text string or URL.' // تحسين الرسالة
+            error: 'Invalid input. Please provide a valid text string or URL.' // تحسين الرسالة
         });
-      }
-      
+    }
+
 
     // If you need to check if it's a URL (optional):
     if (!isValidUrl(text)) {

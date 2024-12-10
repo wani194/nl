@@ -1,3 +1,12 @@
+import { precacheAndRoute } from 'workbox-precaching';
+
+
+precacheAndRoute([
+    { url: '/index.html', revision: '1' },
+    { url: '/bundle.js', revision: '1' },
+    { url: '/styles.css', revision: '1' }
+]);
+
 const CACHE_NAME = 'nlp-cache-v1';
 const urlsToCache = [
     '/',
@@ -5,6 +14,7 @@ const urlsToCache = [
     '/bundle.js',
     '/styles.css',
 ];
+
 
 // Install the Service Worker and cache the necessary files
 self.addEventListener('install', (event) => {
@@ -27,10 +37,20 @@ self.addEventListener('fetch', (event) => {
 });
 
 // Activate the Service Worker and remove outdated caches
-self.addEventListener('install', (event) => {
+self.addEventListener('activate', (event) => {
+    const cacheWhitelist = [CACHE_NAME];
+
     event.waitUntil(
-      caches.open(CACHE_NAME)
-        .then((cache) => cache.addAll(urlsToCache)) 
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    if (!cacheWhitelist.includes(cacheName)) {
+
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
     );
-  });
-  
+});
+

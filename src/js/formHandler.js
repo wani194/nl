@@ -23,7 +23,7 @@ export const handleFormSubmit = async (e) => {
 
   try {
     //make a post requast to the sentiment analysis endpoint
-    const response = await fetch('http://localhost:8888/sentiment', {
+    const response = await fetch('http://localhost:8081/sentiment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: url }),
