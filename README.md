@@ -28,14 +28,13 @@ A web tool for analyzing sentiment and subjectivity of articles and blogs using 
 ## Setup and Installation
 
 ### Prerequisites
-- Ensure you have the following installed:
-  - Node.js (version 14 or later).
-  - npm (Node Package Manager).
+ - Node.js (version 14 or later).
+- npm (Node Package Manager).
 
 ### Steps to Install
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/nlp-project.git
+    git clone https://github.com/wani194/nlp-project
     ```
 
 2. Navigate to the project directory:
@@ -58,7 +57,7 @@ A web tool for analyzing sentiment and subjectivity of articles and blogs using 
     npm run dev
     ```
 
-2. Open your browser and navigate to:
+2. Open  browser :
     ```
     http://localhost:8081
     ```
