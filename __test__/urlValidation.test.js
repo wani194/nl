@@ -1,4 +1,4 @@
-import { isValidUrl } from './urlValidation.js';
+import { isValidUrl } from '../src/js/urlValidation.js';
 
 test('Validates correct URLs', () => {
     //روابط صح

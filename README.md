@@ -1,86 +1,54 @@
-# NLP Project
-## Description
-A web tool for analyzing sentiment and subjectivity of articles and blogs using Natural Language Processing (NLP). It classifies content as subjective or objective and determines the tone (positive, neutral, negative). 
+# How to run this project 
 
 
----
+### Adding API Key:
 
-## Features
-- Analyze articles for sentiment polarity (positive, neutral, or negative).
-- Classify articles as subjective or objective.
-- Display results including polarity, subjectivity, and a snippet of the analyzed text.
-- Validate URLs with user-friendly error messages.
-- Works offline with Service Worker integration.
-- Simple, responsive user interface.
+- Edit the API IN .env file API_KEY=YOUR_API
+- save .env  file
 
----
+### Installing Dependencies:
 
-## Technologies Used
-- **Node.js**: Backend runtime.
-- **Express**: Web framework for routing and server setup.
-- **MeaningCloud API**: NLP analysis of article content.
-- **Webpack**: Tool for bundling, optimizing, and managing assets.
-- **SCSS**: Modular and efficient styling approach.
-- **Jest**: JavaScript testing framework for unit tests.
+`` npm i --legacy-peer-deps``
 
----
+### Starting the Project:
 
-## Setup and Installation
+``npm start``
 
-### Prerequisites
- - Node.js (version 14 or later).
-- npm (Node Package Manager).
+### Instructions for the Reviewer
 
-### Steps to Install
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/wani194/nlp-project
-    ```
+Please ensure the following versions are used to run the project successfully:
 
-2. Navigate to the project directory:
-    ```bash
-    cd nlp-project
-    ```
+- **Python:** Version **3.10.x**  
+- **Node.js:** Version **v22.12.0**  
 
-3. Install the required dependencies:
-    ```bash
-    npm install
-    ```
+#### Steps to Ensure Proper Setup:
+1. Install the specified versions of **Python** and **Node.js**.  
+2. Install the required dependencies using the following commands:
+   - **Python:**  
+     ```bash
+     pip install -r requirements.txt
+     ```  
+   - **Node.js:**  
+     ```bash
+     npm install
+     ```  
 
----
+3. Verify the installed versions using the commands:  
+   - **Python:**  
+     ```bash
+     python --version
+     ```  
+   - **Node.js:**  
+     ```bash
+     node -v
+     ```  
 
-## Usage
+# My Project
 
-### Running the Development Server
-1. Start the development server:
-    ```bash
-    npm run dev
-    ```
+Here are the output images for my project:
 
-2. Open  browser :
-    ```
-    http://localhost:8081
-    ```
-
-### Running the Production Build
-1. Build the project for production:
-    ```bash
-    npm run build
-    ```
-
-2. Start the production server:
-    ```bash
-    npm run start
-    ```
-
-3. Open your browser and go to:
-    ```
-    http://localhost:8081
-    ```
-
----
-
-## Testing
-To ensure all functionalities are working as expected, run the test cases:
-```bash
-npm run test
+![Image 1](nlp-project/output-image/1.jpg)
+![Image 2](nlp-project/output-image/2.jpg)
+![Image 3](nlp-project/output-image/3.jpg)
+![Image 4](nlp-project/output-image/4.jpg)
+![Image 5](nlp-project/output-image/5.jpg)
